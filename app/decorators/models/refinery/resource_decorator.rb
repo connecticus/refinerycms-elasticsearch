@@ -8,7 +8,8 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Resource')
           title: { type: 'string' },
           file_name: { type: 'string', index: 'not_analyzed' },
           created_at: { type: 'date' },
-          updated_at: { type: 'date' }
+          updated_at: { type: 'date' },
+          content: { type: "attachment" }
         }
       end
 
@@ -17,7 +18,8 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Resource')
           title: title,
           file_name: file_name,
           created_at: created_at,
-          updated_at: updated_at
+          updated_at: updated_at,
+          content: "e1xydGYxXGFuc2kNCkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0DQpccGFyIH0="
         }
       end
     end
