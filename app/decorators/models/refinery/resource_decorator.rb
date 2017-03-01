@@ -19,9 +19,10 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Resource')
           file_name: file_name,
           created_at: created_at,
           updated_at: updated_at,
-          content: "e1xydGYxXGFuc2kNCkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0DQpccGFyIH0="
+          content: file.b64_data
         }
       end
+
     end
   rescue NameError
   end
