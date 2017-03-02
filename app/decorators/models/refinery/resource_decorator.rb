@@ -19,8 +19,12 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Resource')
           file_name: file_name,
           created_at: created_at,
           updated_at: updated_at,
-          content: file.b64_data
+          content: Base64.encode64(text_content)
         }
+      end
+
+      def text_content
+        %x(pdftotext #{file.path} -)
       end
 
     end
