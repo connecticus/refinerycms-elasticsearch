@@ -47,7 +47,7 @@ module Refinery
             query: {},
             highlight: {
               fields: {
-                '*' => {}
+                '*' => {require_field_match: false}
               }
             }
           }
