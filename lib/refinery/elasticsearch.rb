@@ -46,8 +46,8 @@ module Refinery
           body = {
             query: {},
             highlight: {
-              pre_tags: ["<div class='highlight'>"],
-              post_tags: ["</div>"],
+              pre_tags: ["<span class='highlight'>"],
+              post_tags: ["</span>"],
               fields: {
                 '*' => {require_field_match: false}
               }
