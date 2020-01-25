@@ -3,13 +3,15 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Blog::Post')
     Refinery::Blog::Post.class_eval do
       include ::Refinery::Elasticsearch::Searchable
 
+      I18n.locale = :ru
+
       define_mapping do
         {
-          title: { type: 'string' },
-          browser_title: { type: 'string', analyzer: 'snowball' },
-          body: { type: 'string', analyzer: 'snowball' },
-          custom_teaser: { type: 'string', analyzer: 'snowball' },
-          meta_description: { type: 'string' },
+          title: { type: 'keyword' },
+          browser_title: { type: 'keyword' },
+          body: { type: 'text' },
+          custom_teaser: { type: 'text' },
+          meta_description: { type: 'keyword' },
           created_at: { type: 'date' },
           updated_at: { type: 'date' }
         }

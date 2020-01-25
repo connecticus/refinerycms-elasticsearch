@@ -1,0 +1,20 @@
+ru:
+  refinery:
+    plugins:
+      elasticsearch:
+        title: Поиск
+        description: Умный поиск для Refinery
+    elasticsearch:
+      search:
+        show:
+          search_results_for:
+            zero: 'Нет результатов по запросу "%{what}".'
+            one: '1 запись по запросу "%{what}"'
+            other: '%{count} записей по запросу "%{what}"'
+          no_results_for: 'Нет результатов по запросу "%{what}".'
+          updated_at: 'Обновлено %{when} назад.'
+          score: '%{score}%'
+    shared:
+      search:
+        search_site_for: "Искать"
+        go: "Искать"
