@@ -11,7 +11,7 @@ module Refinery
 
     class << self
       def index_name
-        @index_name ||= ::Refinery::Core.config.site_name.to_slug.normalize!
+        @index_name ||= ::Refinery::Core.config.site_name.parameterize.to_slug.normalize!
       end
 
       def root

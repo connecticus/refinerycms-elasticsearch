@@ -2,15 +2,16 @@ if Refinery::Elasticsearch.enable_for.include?('Refinery::Blog::Post')
   begin
     Refinery::Blog::Post.class_eval do
       include ::Refinery::Elasticsearch::Searchable
+      include Elasticsearch::Model
 
-      I18n.locale = :ru
+      I18n.locale = Refinery::I18n.config.default_locale
 
       define_mapping do
         {
           title: { type: 'keyword' },
           browser_title: { type: 'keyword' },
-          body: { type: 'text' },
-          custom_teaser: { type: 'text' },
+          body: { type: 'text', analyzer: 'snowball' },
+          custom_teaser: { type: 'text', analyzer: 'snowball' },
           meta_description: { type: 'keyword' },
           created_at: { type: 'date' },
           updated_at: { type: 'date' }
